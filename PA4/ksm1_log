@@ -1,0 +1,94 @@
+minseo@minseo-virtual-machine:~/OS/pa4/xv6-riscv-snu$ make qemu
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 1 -nographic -icount shift=0 -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+init: starting sh
+$ ksm1
+pid 3: ksmd starts
+ksm: scanned=0, merged=0, freemem=32182
+KSMD: after forking child 4
+[KSM] ================= Scanning Process[4] =================
+[KSM] Scanning VPN(0): Unique Page (PA: 0x0000000087f48000)
+[KSM] Scanning VPN(1): Mapped to zero page
+[KSM] Scanning VPN(2): Mapped to zero page
+[KSM] Scanning VPN(3): Mapped to zero page
+[KSM] Scanning VPN(4): Mapped to zero page
+[KSM] Scanning VPN(5): Mapped to zero page
+[KSM] Scanning VPN(6): Unique Page (PA: 0x0000000087f50000)
+ksm: scanned=7, merged=5, freemem=32174
+KSMD: after forking child 5
+[KSM] ================= Scanning Process[4] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): 
+[KSM] Scanning VPN(3): 
+[KSM] Scanning VPN(4): 
+[KSM] Scanning VPN(5): 
+[KSM] Scanning VPN(6): 
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): Hash match, (old pa: 0x0000000087f4b000 -> new pa: 0x0000000087f48000) (RC -> 2)
+[KSM] Scanning VPN(1): Mapped to zero page
+[KSM] Scanning VPN(2): Mapped to zero page
+[KSM] Scanning VPN(3): Mapped to zero page
+[KSM] Scanning VPN(4): Mapped to zero page
+[KSM] Scanning VPN(5): Mapped to zero page
+[KSM] Scanning VPN(6): Unique Page (PA: 0x0000000087f6d000)
+ksm: scanned=14, merged=6, freemem=32167
+KSMD: after forking child 6
+[KSM] ================= Scanning Process[4] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): 
+[KSM] Scanning VPN(3): 
+[KSM] Scanning VPN(4): 
+[KSM] Scanning VPN(5): 
+[KSM] Scanning VPN(6): 
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): 
+[KSM] Scanning VPN(3): 
+[KSM] Scanning VPN(4): 
+[KSM] Scanning VPN(5): 
+[KSM] Scanning VPN(6): 
+[KSM] ================= Scanning Process[6] =================
+[KSM] Scanning VPN(0): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f48000) (RC -> 3)
+[KSM] Scanning VPN(1): Mapped to zero page
+[KSM] Scanning VPN(2): Mapped to zero page
+[KSM] Scanning VPN(3): Mapped to zero page
+[KSM] Scanning VPN(4): Mapped to zero page
+[KSM] Scanning VPN(5): Mapped to zero page
+[KSM] Scanning VPN(6): Unique Page (PA: 0x0000000087f30000)
+ksm: scanned=21, merged=6, freemem=32160
+KSMD: after terminating child 5
+[KSM] ================= Scanning Process[4] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): 
+[KSM] Scanning VPN(3): 
+[KSM] Scanning VPN(4): 
+[KSM] Scanning VPN(5): 
+[KSM] Scanning VPN(6): 
+[KSM] ================= Scanning Process[6] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): 
+[KSM] Scanning VPN(3): 
+[KSM] Scanning VPN(4): 
+[KSM] Scanning VPN(5): 
+[KSM] Scanning VPN(6): 
+ksm: scanned=14, merged=0, freemem=32167
+KSMD: after terminating child 4
+[KSM] ================= Scanning Process[6] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): 
+[KSM] Scanning VPN(3): 
+[KSM] Scanning VPN(4): 
+[KSM] Scanning VPN(5): 
+[KSM] Scanning VPN(6): 
+ksm: scanned=7, merged=0, freemem=32174
+KSMD: after terminating child 6
+ksm: scanned=0, merged=0, freemem=32182
+

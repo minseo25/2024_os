@@ -1,0 +1,427 @@
+minseo@minseo-virtual-machine:~/OS/pa4/xv6-riscv-snu$ make qemu
+qemu-system-riscv64 -machine virt -bios none -kernel kernel/kernel -m 128M -smp 1 -nographic -icount shift=0 -global virtio-mmio.force-legacy=false -drive file=fs.img,if=none,format=raw,id=x0 -device virtio-blk-device,drive=x0,bus=virtio-mmio-bus.0
+
+xv6 kernel is booting
+
+init: starting sh
+$ ksmd &
+$ ksm3
+
+ksmd: scanned 0, merged 0, freemem 32191
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): Unique Page (PA: 0x0000000087f4c000)
+[KSM] Scanning VPN(1): Unique Page (PA: 0x0000000087f4f000)
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f50000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f51000 -> new pa: 0x0000000087f50000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f50000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f50000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f50000) (RC -> 5)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f50000) (RC -> 6)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f50000) (RC -> 7)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f50000) (RC -> 8)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f6d000 -> new pa: 0x0000000087f50000) (RC -> 9)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f5f000 -> new pa: 0x0000000087f50000) (RC -> 10)
+[KSM] Scanning VPN(12): Unique Page (PA: 0x0000000087f27000)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f27000) (RC -> 2)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f25000 -> new pa: 0x0000000087f27000) (RC -> 3)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f27000) (RC -> 4)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f27000) (RC -> 5)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f27000) (RC -> 6)
+[KSM] Scanning VPN(18): Mapped to zero page
+[KSM] Scanning VPN(19): Mapped to zero page
+[KSM] Scanning VPN(20): Unique Page (PA: 0x0000000087f1f000)
+ksmd: scanned 21, merged 16, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f27000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f27000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f5f000 -> new pa: 0x0000000087f27000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f6d000 -> new pa: 0x0000000087f27000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f27000) (RC -> 5)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f27000) (RC -> 6)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f27000) (RC -> 7)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f27000) (RC -> 8)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f27000) (RC -> 9)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f27000) (RC -> 10)
+[KSM] Scanning VPN(12): Unique Page (PA: 0x0000000087f20000)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f21000 -> new pa: 0x0000000087f20000) (RC -> 2)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f20000) (RC -> 3)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f20000) (RC -> 4)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f20000) (RC -> 5)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f25000 -> new pa: 0x0000000087f20000) (RC -> 6)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f20000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f20000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f20000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f20000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f20000) (RC -> 5)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f20000) (RC -> 6)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f6d000 -> new pa: 0x0000000087f20000) (RC -> 7)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f5f000 -> new pa: 0x0000000087f20000) (RC -> 8)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f20000) (RC -> 9)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f20000) (RC -> 10)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f25000 -> new pa: 0x0000000087f20000) (RC -> 11)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f20000) (RC -> 12)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f20000) (RC -> 13)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f20000) (RC -> 14)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f21000 -> new pa: 0x0000000087f20000) (RC -> 15)
+[KSM] Scanning VPN(17): Unique Page (PA: 0x0000000087f52000)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f21000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f21000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f21000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f21000) (RC -> 4)
+[KSM] Scanning VPN(6): Unique Page (PA: 0x0000000087f25000)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f25000) (RC -> 2)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f25000) (RC -> 3)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f5f000 -> new pa: 0x0000000087f25000) (RC -> 4)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f6d000 -> new pa: 0x0000000087f25000) (RC -> 5)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f25000) (RC -> 6)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f25000) (RC -> 7)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f25000) (RC -> 8)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f25000) (RC -> 9)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f25000) (RC -> 10)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f25000) (RC -> 11)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f25000) (RC -> 12)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f25000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f25000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f25000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f20000 -> new pa: 0x0000000087f25000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f25000) (RC -> 5)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f25000) (RC -> 6)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f25000) (RC -> 7)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f25000) (RC -> 8)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f25000) (RC -> 9)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f25000) (RC -> 10)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f25000) (RC -> 11)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f6d000 -> new pa: 0x0000000087f25000) (RC -> 12)
+[KSM] Scanning VPN(14): Unique Page (PA: 0x0000000087f5f000)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f5f000) (RC -> 2)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f5f000) (RC -> 3)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f5f000) (RC -> 4)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f5f000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f5f000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f5f000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f5f000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f5f000) (RC -> 5)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f5f000) (RC -> 6)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f5f000) (RC -> 7)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f5f000) (RC -> 8)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f20000 -> new pa: 0x0000000087f5f000) (RC -> 9)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f5f000) (RC -> 10)
+[KSM] Scanning VPN(12): Unique Page (PA: 0x0000000087f23000)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f21000 -> new pa: 0x0000000087f23000) (RC -> 2)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f23000) (RC -> 3)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f23000) (RC -> 4)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f23000) (RC -> 5)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f6d000 -> new pa: 0x0000000087f23000) (RC -> 6)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f23000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f20000 -> new pa: 0x0000000087f23000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f23000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f23000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f23000) (RC -> 5)
+[KSM] Scanning VPN(7): Unique Page (PA: 0x0000000087f54000)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f54000) (RC -> 2)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f54000) (RC -> 3)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f54000) (RC -> 4)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f25000 -> new pa: 0x0000000087f54000) (RC -> 5)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f6d000 -> new pa: 0x0000000087f54000) (RC -> 6)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f54000) (RC -> 7)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f54000) (RC -> 8)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f54000) (RC -> 9)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f21000 -> new pa: 0x0000000087f54000) (RC -> 10)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f54000) (RC -> 11)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f54000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f54000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f54000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f20000 -> new pa: 0x0000000087f54000) (RC -> 4)
+[KSM] Scanning VPN(6): Unique Page (PA: 0x0000000087f5f000)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f5f000) (RC -> 2)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f21000 -> new pa: 0x0000000087f5f000) (RC -> 3)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f5f000) (RC -> 4)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f5f000) (RC -> 5)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f5f000) (RC -> 6)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f6d000 -> new pa: 0x0000000087f5f000) (RC -> 7)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f25000 -> new pa: 0x0000000087f5f000) (RC -> 8)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f5f000) (RC -> 9)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f5f000) (RC -> 10)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f5f000) (RC -> 11)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f5f000) (RC -> 12)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f5f000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f5f000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f5f000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f5f000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f5f000) (RC -> 5)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f5f000) (RC -> 6)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f5f000) (RC -> 7)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f5f000) (RC -> 8)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f25000 -> new pa: 0x0000000087f5f000) (RC -> 9)
+[KSM] Scanning VPN(11): Unique Page (PA: 0x0000000087f6d000)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f6d000) (RC -> 2)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f6d000) (RC -> 3)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f6d000) (RC -> 4)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f21000 -> new pa: 0x0000000087f6d000) (RC -> 5)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f6d000) (RC -> 6)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f20000 -> new pa: 0x0000000087f6d000) (RC -> 7)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f6d000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f6d000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f6d000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f6d000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f6d000) (RC -> 5)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f6d000) (RC -> 6)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f6d000) (RC -> 7)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f6d000) (RC -> 8)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f6d000) (RC -> 9)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f20000 -> new pa: 0x0000000087f6d000) (RC -> 10)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f6d000) (RC -> 11)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f21000 -> new pa: 0x0000000087f6d000) (RC -> 12)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f6d000) (RC -> 13)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f6d000) (RC -> 14)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f6d000) (RC -> 15)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f25000 -> new pa: 0x0000000087f6d000) (RC -> 16)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 15, freemem 32181
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f25000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f25000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f25000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f25000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f21000 -> new pa: 0x0000000087f25000) (RC -> 5)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f25000) (RC -> 6)
+[KSM] Scanning VPN(8): Unique Page (PA: 0x0000000087f20000)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f20000) (RC -> 2)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f20000) (RC -> 3)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f20000) (RC -> 4)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f20000) (RC -> 5)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f20000) (RC -> 6)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f20000) (RC -> 7)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f20000) (RC -> 8)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f20000) (RC -> 9)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f5f000 -> new pa: 0x0000000087f20000) (RC -> 10)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f20000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f21000 -> new pa: 0x0000000087f20000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f20000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f20000) (RC -> 4)
+[KSM] Scanning VPN(6): Unique Page (PA: 0x0000000087f26000)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f6d000 -> new pa: 0x0000000087f26000) (RC -> 2)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f5f000 -> new pa: 0x0000000087f26000) (RC -> 3)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f26000) (RC -> 4)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f26000) (RC -> 5)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f26000) (RC -> 6)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f26000) (RC -> 7)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f26000) (RC -> 8)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f26000) (RC -> 9)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f26000) (RC -> 10)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f26000) (RC -> 11)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f26000) (RC -> 12)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f26000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f26000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f21000 -> new pa: 0x0000000087f26000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f25000 -> new pa: 0x0000000087f26000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f26000) (RC -> 5)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f26000) (RC -> 6)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f26000) (RC -> 7)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f26000) (RC -> 8)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f26000) (RC -> 9)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f26000) (RC -> 10)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f26000) (RC -> 11)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f26000) (RC -> 12)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f26000) (RC -> 13)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f5f000 -> new pa: 0x0000000087f26000) (RC -> 14)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f6d000 -> new pa: 0x0000000087f26000) (RC -> 15)
+[KSM] Scanning VPN(17): Unique Page (PA: 0x0000000087f50000)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f6d000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f5f000 -> new pa: 0x0000000087f6d000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f6d000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f6d000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f6d000) (RC -> 5)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f6d000) (RC -> 6)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f6d000) (RC -> 7)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f6d000) (RC -> 8)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f6d000) (RC -> 9)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f6d000) (RC -> 10)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f6d000) (RC -> 11)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f25000 -> new pa: 0x0000000087f6d000) (RC -> 12)
+[KSM] Scanning VPN(14): Unique Page (PA: 0x0000000087f21000)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f21000) (RC -> 2)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f20000 -> new pa: 0x0000000087f21000) (RC -> 3)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f21000) (RC -> 4)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f21000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f21000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f21000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f21000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f21000) (RC -> 5)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f21000) (RC -> 6)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f21000) (RC -> 7)
+[KSM] Scanning VPN(9): Unique Page (PA: 0x0000000087f6e000)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f6e000) (RC -> 2)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f6e000) (RC -> 3)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f5f000 -> new pa: 0x0000000087f6e000) (RC -> 4)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f6e000) (RC -> 5)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f6e000) (RC -> 6)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f20000 -> new pa: 0x0000000087f6e000) (RC -> 7)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f6e000) (RC -> 8)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f25000 -> new pa: 0x0000000087f6e000) (RC -> 9)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f6e000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f6e000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f6e000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f6e000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f6e000) (RC -> 5)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f6e000) (RC -> 6)
+[KSM] Scanning VPN(8): Unique Page (PA: 0x0000000087f6d000)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f25000 -> new pa: 0x0000000087f6d000) (RC -> 2)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f24000 -> new pa: 0x0000000087f6d000) (RC -> 3)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f20000 -> new pa: 0x0000000087f6d000) (RC -> 4)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f6d000) (RC -> 5)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f6d000) (RC -> 6)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f5f000 -> new pa: 0x0000000087f6d000) (RC -> 7)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f6d000) (RC -> 8)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f6d000) (RC -> 9)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f6d000) (RC -> 10)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f6d000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f6d000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f6d000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f6d000) (RC -> 4)
+[KSM] Scanning VPN(6): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f6d000) (RC -> 5)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f21000 -> new pa: 0x0000000087f6d000) (RC -> 6)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f6d000) (RC -> 7)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f6d000) (RC -> 8)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f61000 -> new pa: 0x0000000087f6d000) (RC -> 9)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f5f000 -> new pa: 0x0000000087f6d000) (RC -> 10)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f6d000) (RC -> 11)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f6d000) (RC -> 12)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f20000 -> new pa: 0x0000000087f6d000) (RC -> 13)
+[KSM] Scanning VPN(15): Unique Page (PA: 0x0000000087f24000)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f25000 -> new pa: 0x0000000087f24000) (RC -> 2)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f24000) (RC -> 3)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+[KSM] ================= Scanning Process[5] =================
+[KSM] Scanning VPN(0): 
+[KSM] Scanning VPN(1): 
+[KSM] Scanning VPN(2): Unique Page (PA: 0x0000000087f24000)
+[KSM] Scanning VPN(3): Hash match, (old pa: 0x0000000087f50000 -> new pa: 0x0000000087f24000) (RC -> 2)
+[KSM] Scanning VPN(4): Hash match, (old pa: 0x0000000087f26000 -> new pa: 0x0000000087f24000) (RC -> 3)
+[KSM] Scanning VPN(5): Hash match, (old pa: 0x0000000087f5f000 -> new pa: 0x0000000087f24000) (RC -> 4)
+[KSM] Scanning VPN(6): Unique Page (PA: 0x0000000087f61000)
+[KSM] Scanning VPN(7): Hash match, (old pa: 0x0000000087f62000 -> new pa: 0x0000000087f61000) (RC -> 2)
+[KSM] Scanning VPN(8): Hash match, (old pa: 0x0000000087f53000 -> new pa: 0x0000000087f61000) (RC -> 3)
+[KSM] Scanning VPN(9): Hash match, (old pa: 0x0000000087f21000 -> new pa: 0x0000000087f61000) (RC -> 4)
+[KSM] Scanning VPN(10): Hash match, (old pa: 0x0000000087f23000 -> new pa: 0x0000000087f61000) (RC -> 5)
+[KSM] Scanning VPN(11): Hash match, (old pa: 0x0000000087f27000 -> new pa: 0x0000000087f61000) (RC -> 6)
+[KSM] Scanning VPN(12): Hash match, (old pa: 0x0000000087f52000 -> new pa: 0x0000000087f61000) (RC -> 7)
+[KSM] Scanning VPN(13): Hash match, (old pa: 0x0000000087f54000 -> new pa: 0x0000000087f61000) (RC -> 8)
+[KSM] Scanning VPN(14): Hash match, (old pa: 0x0000000087f6e000 -> new pa: 0x0000000087f61000) (RC -> 9)
+[KSM] Scanning VPN(15): Hash match, (old pa: 0x0000000087f22000 -> new pa: 0x0000000087f61000) (RC -> 10)
+[KSM] Scanning VPN(16): Hash match, (old pa: 0x0000000087f25000 -> new pa: 0x0000000087f61000) (RC -> 11)
+[KSM] Scanning VPN(17): Hash match, (old pa: 0x0000000087f20000 -> new pa: 0x0000000087f61000) (RC -> 12)
+[KSM] Scanning VPN(18): 
+[KSM] Scanning VPN(19): 
+[KSM] Scanning VPN(20): 
+ksmd: scanned 21, merged 14, freemem 32180
+ksm3: OK
+ksm3: elapsed time = 86421565
+
